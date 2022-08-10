@@ -12,6 +12,7 @@
             background-color: black;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
  <div class="container-fluid">
@@ -21,7 +22,7 @@
                 <label for="cityname">ENTER YOUR CITY NAME:</label>
                 <br><br>
                 <input type="text">
-                <input type="submit" value="Get weather">
+                <input type="submit" value="Get Weather">
                 </div>
             <div class="div1 p-4 p-md-5 m-5">
                   <h5>INDIA</h5>
@@ -35,4 +36,12 @@
 
  
 </body>
+<script>
+    var apiKeys = "99835a70d5405ae1cb1a194441a2cd09";
+    axios.get("https://api.openweathermap.org/data/2.5/weather?q=HYDERABAD&appid=99835a70d5405ae1cb1a194441a2cd09")
+        .then(function (res) {
+console.log(res.data);
+        });
+</script>
+
 </html>
