@@ -21,10 +21,10 @@
             <div class="div1 p-4 p-md-5 m-5">
                 <label for="cityname">ENTER YOUR CITY NAME:</label>
                 <br><br>
-                <input type="text">
-                <input type="submit" value="Get Weather">
+                <input type="text" id="cityname">
+                <input type="submit" value="Get Weather" onclick="getWeather()"> 
                 </div>
-            <div class="div1 p-4 p-md-5 m-5">
+            <div class="div1 p-4 p-md-5 m-5"> 
                   <h5>INDIA</h5>
             </div>
 
@@ -37,11 +37,15 @@
  
 </body>
 <script>
+    function getWeather(){
+var cityname = document.getElementById("cityname").value;
+    
     var apiKeys = "99835a70d5405ae1cb1a194441a2cd09";
-    axios.get("https://api.openweathermap.org/data/2.5/weather?q=HYDERABAD&appid=99835a70d5405ae1cb1a194441a2cd09")
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=99835a70d5405ae1cb1a194441a2cd09`)
         .then(function (res) {
 console.log(res.data);
         });
+    }
 </script>
 
 </html>
